@@ -2,7 +2,6 @@ D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Securit
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security\bin\Debug\net6.0\ACT_Security.dll
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security\bin\Debug\net6.0\ref\ACT_Security.dll
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security\bin\Debug\net6.0\ACT_Security.pdb
-D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security\obj\Debug\net6.0\ACT_Security.csproj.AssemblyReference.cache
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security\obj\Debug\net6.0\ACT_Security.GeneratedMSBuildEditorConfig.editorconfig
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security\obj\Debug\net6.0\ACT_Security.AssemblyInfoInputs.cache
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security\obj\Debug\net6.0\ACT_Security.AssemblyInfo.cs
