@@ -5,10 +5,32 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <RootNamespace>ACT.Core.Security</RootNamespace>
+    <ApplicationIcon>ACT_Security_Icon.ico</ApplicationIcon>
+    <BaseOutputPath>D:\IVolt_Releases\ACT-Security</BaseOutputPath>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>2.0.2</Version>
+    <Authors>IVOLT,LLC, Mark Alicz</Authors>
+    <Description>Simple - Quick Encryption - Everyday Use, Home Projects, etc.  </Description>
+    <Copyright>2021 IVOLT, LLC</Copyright>
+    <PackageProjectUrl>http://www.ivolt.io/ACT</PackageProjectUrl>
+    <PackageIcon>ACT_Security_Icon.png</PackageIcon>
+    <PackageTags>.NET;Encryption;Simple Encryption;Extension Methods;C#</PackageTags>
+    <PackageReleaseNotes>Conversion to ,Net 6</PackageReleaseNotes>
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="ACT_Security_Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
+    <None Include="M:\Shared drives\Assets\IVolt_Product_Images\ACT\ACT_Security\ACT_Security_Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

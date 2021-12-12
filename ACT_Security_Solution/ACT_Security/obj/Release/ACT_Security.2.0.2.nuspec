@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ACT_Security</id>
+    <version>2.0.2</version>
+    <authors>IVOLT,LLC, Mark Alicz</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">GPL-3.0-only</license>
+    <licenseUrl>https://licenses.nuget.org/GPL-3.0-only</licenseUrl>
+    <icon>ACT_Security_Icon.png</icon>
+    <projectUrl>http://www.ivolt.io/ACT</projectUrl>
+    <description>Simple - Quick Encryption - Everyday Use, Home Projects, etc.</description>
+    <releaseNotes>Conversion to ,Net 6</releaseNotes>
+    <copyright>2021 IVOLT, LLC</copyright>
+    <tags>.NET Encryption Simple Encryption Extension Methods C#</tags>
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="IVolt_ACT_ExtensionLibrary" version="2.0.5" exclude="Build,Analyzers" />
+        <dependency id="System.Security.Cryptography.Primitives" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <contentFiles>
+      <files include="any/net6.0/ACT_Security_Icon.ico" buildAction="Content" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="D:\IVolt_Releases\ACT-Security\Release\net6.0\ACT_Security.dll" target="lib\net6.0\ACT_Security.dll" />
+    <file src="D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security\ACT_Security_Icon.ico" target="content\ACT_Security_Icon.ico" />
+    <file src="D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security\ACT_Security_Icon.ico" target="contentFiles\any\net6.0\ACT_Security_Icon.ico" />
+    <file src="M:\Shared drives\Assets\IVolt_Product_Images\ACT\ACT_Security\ACT_Security_Icon.png" target="\ACT_Security_Icon.png" />
+  </files>
+</package>

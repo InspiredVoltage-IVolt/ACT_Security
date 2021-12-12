@@ -12,7 +12,7 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("IVOLT,LLC, Mark Alicz")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("2021 IVOLT, LLC")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Simple - Quick Encryption - Everyday Use, Home Projects, etc.  ")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("2.0.2.0")]
