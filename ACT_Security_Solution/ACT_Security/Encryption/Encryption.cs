@@ -3,71 +3,60 @@ using System.Text;
 
 namespace ACT.Core.Security
 {
-
     public static class Encryption
     {
-
-        public static string EncryptString(string text, string keyString)
+        public static string EncryptString(string key, string plainText)
         {
-            var key = Encoding.UTF8.GetBytes(keyString);
+            byte[] iv = new byte[16];
+            byte[] array;
 
-            using (var aesAlg = Aes.Create())
+            using (Aes aes = Aes.Create())
             {
-                using (var encryptor = aesAlg.CreateEncryptor(key, aesAlg.IV))
+                aes.Key = Encoding.UTF8.GetBytes(key);
+                aes.IV = iv;
+
+                ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
+
+                using (MemoryStream memoryStream = new MemoryStream())
                 {
-                    using (var msEncrypt = new MemoryStream())
+                    using (CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write))
                     {
-                        using (var csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
-                        using (var swEncrypt = new StreamWriter(csEncrypt))
+                        using (StreamWriter streamWriter = new StreamWriter(cryptoStream))
                         {
-                            swEncrypt.Write(text);
+                            streamWriter.Write(plainText);
                         }
 
-                        var iv = aesAlg.IV;
-
-                        var decryptedContent = msEncrypt.ToArray();
-
-                        var result = new byte[iv.Length + decryptedContent.Length];
-
-                        Buffer.BlockCopy(iv, 0, result, 0, iv.Length);
-                        Buffer.BlockCopy(decryptedContent, 0, result, iv.Length, decryptedContent.Length);
-
-                        return Convert.ToBase64String(result);
+                        array = memoryStream.ToArray();
                     }
                 }
             }
+
+            return Convert.ToBase64String(array);
         }
 
-        public static string DecryptString(string cipherText, string keyString)
+        public static string DecryptString(string key, string cipherText)
         {
-            var fullCipher = Convert.FromBase64String(cipherText);
+            byte[] iv = new byte[16];
+            byte[] buffer = Convert.FromBase64String(cipherText);
 
-            var iv = new byte[16];
-            var cipher = new byte[16];
-
-            Buffer.BlockCopy(fullCipher, 0, iv, 0, iv.Length);
-            Buffer.BlockCopy(fullCipher, iv.Length, cipher, 0, iv.Length);
-            var key = Encoding.UTF8.GetBytes(keyString);
-
-            using (var aesAlg = Aes.Create())
+            using (Aes aes = Aes.Create())
             {
-                using (var decryptor = aesAlg.CreateDecryptor(key, iv))
+                aes.Key = Encoding.UTF8.GetBytes(key);
+                aes.IV = iv;
+                ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
+
+                using (MemoryStream memoryStream = new MemoryStream(buffer))
                 {
-                    string result;
-                    using (var msDecrypt = new MemoryStream(cipher))
+                    using (CryptoStream cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read))
                     {
-                        using (var csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                        using (StreamReader streamReader = new StreamReader(cryptoStream))
                         {
-                            using (var srDecrypt = new StreamReader(csDecrypt))
-                            {
-                                result = srDecrypt.ReadToEnd();
-                            }
+                            return streamReader.ReadToEnd();
                         }
                     }
-
-                    return result;
                 }
             }
         }
     }
 }
+

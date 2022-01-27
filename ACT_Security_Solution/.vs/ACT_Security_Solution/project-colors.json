@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e65df24f-2f63-492a-855e-ad3c5d40e5ab": {
+      "ProjectGuid": "e65df24f-2f63-492a-855e-ad3c5d40e5ab",
+      "DisplayName": "ACT_Security",
+      "ColorIndex": 0
+    },
+    "d3f8c098-4c80-4f40-8a59-79d98a0aec6e": {
+      "ProjectGuid": "d3f8c098-4c80-4f40-8a59-79d98a0aec6e",
+      "DisplayName": "ACT_Security_Test_Console",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

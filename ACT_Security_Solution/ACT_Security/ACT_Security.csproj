@@ -9,16 +9,24 @@
     <BaseOutputPath>D:\IVolt_Releases\ACT-Security</BaseOutputPath>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>2.0.2</Version>
+    <Version>2.0.3</Version>
     <Authors>IVOLT,LLC, Mark Alicz</Authors>
     <Description>Simple - Quick Encryption - Everyday Use, Home Projects, etc.  </Description>
     <Copyright>2021 IVOLT, LLC</Copyright>
     <PackageProjectUrl>http://www.ivolt.io/ACT</PackageProjectUrl>
     <PackageIcon>ACT_Security_Icon.png</PackageIcon>
     <PackageTags>.NET;Encryption;Simple Encryption;Extension Methods;C#</PackageTags>
-    <PackageReleaseNotes>Conversion to ,Net 6</PackageReleaseNotes>
+    <PackageReleaseNotes>Adjusted some Basic Settings</PackageReleaseNotes>
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;WINDOWS</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;WINDOWS</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,7 +43,9 @@
 
   <ItemGroup>
     <PackageReference Include="IVolt_ACT_ExtensionLibrary" Version="2.0.5" />
+    <PackageReference Include="System.Management" Version="6.0.0" />
     <PackageReference Include="System.Security.Cryptography.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="6.0.0" />
   </ItemGroup>
 
 </Project>
