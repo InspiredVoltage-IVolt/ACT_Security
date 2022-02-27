@@ -2,7 +2,6 @@ D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Securit
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Debug\net6.0\ACT_Security_Test_Console.deps.json
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Debug\net6.0\ACT_Security_Test_Console.runtimeconfig.json
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Debug\net6.0\ACT_Security_Test_Console.dll
-D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Debug\net6.0\ref\ACT_Security_Test_Console.dll
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Debug\net6.0\ACT_Security_Test_Console.pdb
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Debug\net6.0\FastExcel.dll
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Debug\net6.0\ACTExtLib.dll
@@ -35,3 +34,7 @@ D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Securit
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Management.dll
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\obj\Debug\net6.0\refint\ACT_Security_Test_Console.dll
+D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Debug\net6.0\ACT_Enums.dll
+D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Debug\net6.0\ACT_Interfaces.dll

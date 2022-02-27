@@ -5,6 +5,5 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:ACT.Core.Security.Encryption.EncryptToByteArray(System.String,System.Byte[],System.Byte[])~System.Byte[]")]
-[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:Security.FingerPrint.identifier(System.String,System.String)~System.String")]
-[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:Security.FingerPrint.identifier(System.String,System.String,System.String)~System.String")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Windows Only Methods Are Defined and Handled", Scope = "module")]
+

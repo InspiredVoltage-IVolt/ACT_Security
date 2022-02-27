@@ -8,10 +8,40 @@
     ".NETCoreApp,Version=v6.0": {
       "ACT_Security_Test_Console/1.0.0": {
         "dependencies": {
-          "ACT_Security": "2.0.3"
+          "ACT_Security": "2.0.6"
         },
         "runtime": {
           "ACT_Security_Test_Console.dll": {}
+        }
+      },
+      "ACT_Enums/2.0.6": {
+        "runtime": {
+          "lib/net6.0/ACT_Enums.dll": {
+            "assemblyVersion": "2.0.6.0",
+            "fileVersion": "2.0.6.0"
+          }
+        }
+      },
+      "ACT_Interfaces/2.1.3": {
+        "dependencies": {
+          "ACT_Enums": "2.0.6",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Data.SqlClient": "4.8.3",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/ACT_Interfaces.dll": {
+            "assemblyVersion": "2.1.3.0",
+            "fileVersion": "2.1.3.0"
+          }
+        }
+      },
+      "BouncyCastle.NetCore/1.8.10": {
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "assemblyVersion": "1.8.8.0",
+            "fileVersion": "1.8.20265.1"
+          }
         }
       },
       "FastExcel/3.0.13": {
@@ -22,7 +52,7 @@
           }
         }
       },
-      "IVolt_ACT_ExtensionLibrary/2.0.5": {
+      "IVolt_ACT_ExtensionLibrary/2.0.9": {
         "dependencies": {
           "FastExcel": "3.0.13",
           "Microsoft.CSharp": "4.7.0",
@@ -35,8 +65,8 @@
         },
         "runtime": {
           "lib/net6.0/ACTExtLib.dll": {
-            "assemblyVersion": "2.0.5.0",
-            "fileVersion": "2.0.5.0"
+            "assemblyVersion": "2.0.9.0",
+            "fileVersion": "2.0.9.0"
           }
         }
       },
@@ -407,19 +437,19 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
-      "System.Security.Cryptography.ProtectedData/6.0.0": {
+      "System.Security.Cryptography.ProtectedData/7.0.0-preview.1.22076.8": {
         "runtime": {
           "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.7608"
           }
         },
         "runtimeTargets": {
           "runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.7608"
           }
         }
       },
@@ -496,12 +526,14 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "ACT_Security/2.0.3": {
+      "ACT_Security/2.0.6": {
         "dependencies": {
-          "IVolt_ACT_ExtensionLibrary": "2.0.5",
+          "ACT_Interfaces": "2.1.3",
+          "BouncyCastle.NetCore": "1.8.10",
+          "IVolt_ACT_ExtensionLibrary": "2.0.9",
           "System.Management": "6.0.0",
           "System.Security.Cryptography.Primitives": "4.3.0",
-          "System.Security.Cryptography.ProtectedData": "6.0.0"
+          "System.Security.Cryptography.ProtectedData": "7.0.0-preview.1.22076.8"
         },
         "runtime": {
           "ACT_Security.dll": {}
@@ -515,6 +547,27 @@
       "serviceable": false,
       "sha512": ""
     },
+    "ACT_Enums/2.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8zRoHWLLnFLbi4iz1EzM8i38jdcYic6Uq2vwckJ7FGORUZYq6waTNkjH14UpCGtMQAjjVwUMiNI1VVAhmgXv+A==",
+      "path": "act_enums/2.0.6",
+      "hashPath": "act_enums.2.0.6.nupkg.sha512"
+    },
+    "ACT_Interfaces/2.1.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zL1uw2FwXIhzKuIrBnRDmEu5pBgyYb/KNnPfbWhRLUfGnK/nmQezAUOEFEhSauPxp6ociv9tTHxmdoviGbiJNw==",
+      "path": "act_interfaces/2.1.3",
+      "hashPath": "act_interfaces.2.1.3.nupkg.sha512"
+    },
+    "BouncyCastle.NetCore/1.8.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Uqd1mSV+ewDNuX4G0lXds4TM2DYyFTnCUZAjZLxmxglKSCbTZe2R+TQV/u369J/bXaNZ6s/1sedCtl/5u+66iQ==",
+      "path": "bouncycastle.netcore/1.8.10",
+      "hashPath": "bouncycastle.netcore.1.8.10.nupkg.sha512"
+    },
     "FastExcel/3.0.13": {
       "type": "package",
       "serviceable": true,
@@ -522,12 +575,12 @@
       "path": "fastexcel/3.0.13",
       "hashPath": "fastexcel.3.0.13.nupkg.sha512"
     },
-    "IVolt_ACT_ExtensionLibrary/2.0.5": {
+    "IVolt_ACT_ExtensionLibrary/2.0.9": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-B1cZ0YTQJvm3/P7mKnavDuahiaZ0EhK+EihVfNpfYGN6evIBzHj4BHbrNzcgfFGQJJEQLYwjTF8d0TEr2X1HUA==",
-      "path": "ivolt_act_extensionlibrary/2.0.5",
-      "hashPath": "ivolt_act_extensionlibrary.2.0.5.nupkg.sha512"
+      "sha512": "sha512-9OagUk+wrGzlbbLfImP1R1/t00x8jaVginsLbelJn8jQes6wVLhb8MNafRSn9GkODC0vjzdzFUa5MQvQT8TqdQ==",
+      "path": "ivolt_act_extensionlibrary/2.0.9",
+      "hashPath": "ivolt_act_extensionlibrary.2.0.9.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
@@ -865,12 +918,12 @@
       "path": "system.security.cryptography.primitives/4.3.0",
       "hashPath": "system.security.cryptography.primitives.4.3.0.nupkg.sha512"
     },
-    "System.Security.Cryptography.ProtectedData/6.0.0": {
+    "System.Security.Cryptography.ProtectedData/7.0.0-preview.1.22076.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rp1gMNEZpvx9vP0JW0oHLxlf8oSiQgtno77Y4PLUBjSiDYoD77Y8uXHr1Ea5XG4/pIKhqAdxZ8v8OTUtqo9PeQ==",
-      "path": "system.security.cryptography.protecteddata/6.0.0",
-      "hashPath": "system.security.cryptography.protecteddata.6.0.0.nupkg.sha512"
+      "sha512": "sha512-5+PNjDd7GtbmmJd2ueydjFV41y+XhOudtV/eTlfdJyZIxLJVT4gh0kBJ/Qh1L9IiV5LdLAwFAHVNy5/fTrEelQ==",
+      "path": "system.security.cryptography.protecteddata/7.0.0-preview.1.22076.8",
+      "hashPath": "system.security.cryptography.protecteddata.7.0.0-preview.1.22076.8.nupkg.sha512"
     },
     "System.Security.Principal.Windows/4.7.0": {
       "type": "package",
@@ -935,7 +988,7 @@
       "path": "system.xml.xpath/4.3.0",
       "hashPath": "system.xml.xpath.4.3.0.nupkg.sha512"
     },
-    "ACT_Security/2.0.3": {
+    "ACT_Security/2.0.6": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

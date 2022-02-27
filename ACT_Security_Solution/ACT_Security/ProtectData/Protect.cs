@@ -80,6 +80,42 @@ namespace ACT.Core.Security
             }
         }
 
+        /// <summary>
+        /// Protect a String
+        /// </summary>
+        /// <param name="DataToProtect"></param>
+        /// <param name="MachineLevel"></param>
+        /// <returns></returns>
+        public static string ProtectStringToString(string DataToProtect, bool MachineLevel = true)
+        {
+            if (MachineLevel)
+            {
+                return ProtectedData.Protect(DataToProtect.ObjectToByteArray(), null, DataProtectionScope.LocalMachine).ToBase64String();
+            }
+            else
+            {
+                return ProtectedData.Protect(DataToProtect.ObjectToByteArray(), null, DataProtectionScope.CurrentUser).ToBase64String();
+            }
+        }
+
+        /// <summary>
+        /// Unprotect a String
+        /// </summary>
+        /// <param name="DataToProtect"></param>
+        /// <param name="MachineLevel"></param>
+        /// <returns></returns>
+        public static string UnProtectStringToString(string DataToProtect, bool MachineLevel = true)
+        {
+            if (MachineLevel)
+            {
+                return System.Text.Encoding.Default.GetString(ProtectedData.Unprotect(DataToProtect.FromBase64String(), null, DataProtectionScope.LocalMachine));
+            }
+            else
+            {
+                return System.Text.Encoding.Default.GetString(ProtectedData.Unprotect(DataToProtect.FromBase64String(), null, DataProtectionScope.CurrentUser));
+            }
+        }
+
     }
 #pragma warning restore CA1416 // Validate platform compatibility
 }

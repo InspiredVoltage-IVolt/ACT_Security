@@ -7,12 +7,9 @@ namespace ACT.SecurityTestConsole // Note: actual namespace depends on the proje
     {
         public static void Main(string[] args)
         {
-            var _X = ACT.Core.Security.Encryption.EncryptString("MarkAlicz", "abcdefghijklmnop");
-            var _T = ACT.Core.Security.Encryption.DecryptString("MarkAlicz", _X);
 
-            Console.WriteLine(_X);
-            Console.WriteLine(_T);
-            Console.ReadKey();
+
+          
         }
     }
 }
