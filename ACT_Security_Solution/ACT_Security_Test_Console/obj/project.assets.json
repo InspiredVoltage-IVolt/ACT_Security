@@ -882,7 +882,7 @@
           "lib/netstandard1.3/System.Xml.XPath.dll": {}
         }
       },
-      "ACT_Security/2.0.6": {
+      "ACT_Security/2.1.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -3497,7 +3497,7 @@
         "system.xml.xpath.nuspec"
       ]
     },
-    "ACT_Security/2.0.6": {
+    "ACT_Security/2.1.0": {
       "type": "project",
       "path": "../ACT_Security/ACT_Security.csproj",
       "msbuildProject": "../ACT_Security/ACT_Security.csproj"
@@ -3505,7 +3505,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "ACT_Security >= 2.0.6"
+      "ACT_Security >= 2.1.0"
     ]
   },
   "packageFolders": {

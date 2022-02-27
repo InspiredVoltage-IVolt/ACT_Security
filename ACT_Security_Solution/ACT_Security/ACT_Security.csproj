@@ -9,7 +9,7 @@
     <BaseOutputPath>D:\IVolt_Releases\ACT-Security</BaseOutputPath>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>2.0.6</Version>
+    <Version>2.1.0</Version>
     <Authors>IVOLT, Mark Alicz</Authors>
     <Description>Simple - Quick Encryption - Everyday Use, Home Projects, etc.  </Description>
     <Copyright>2022 IVolt, LLC</Copyright>
@@ -20,6 +20,8 @@
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <AssemblyName>ACT_Security</AssemblyName>
+    <AssemblyVersion>2.1.0</AssemblyVersion>
+    <FileVersion>2.1.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
