@@ -12,19 +12,19 @@ namespace ACT.Core.Security.Hashing
         /// <returns>The Hexadecimal string.</returns>
         public static string ToMD5Hash(this string value, bool removeDashes = false)
         {
-            if (value == "" || value == null)
-            {
-                return value.ToString(true);
-            }
-
-            using (MD5 md5 = MD5.Create())
-            {
-                var originalBytes = System.Text.Encoding.Default.GetBytes(value);
-                var encodedBytes = md5.ComputeHash(originalBytes);
-
-                if (removeDashes) { return BitConverter.ToString(encodedBytes).Replace("-", string.Empty).ToUpper(); }
-                else { return BitConverter.ToString(encodedBytes).ToUpper(); }
-            }
+            return ACT_Core_Security.GetBase64StringFromByteArray(System.Text.Encoding.UTF8.GetBytes(value),removeDashes);            
         }
     }
 }
+
+/*
+// OLD CODE
+ using (MD5 md5 = MD5.Create())
+{
+    var originalBytes = System.Text.Encoding.UTF8.GetBytes(value);
+    var encodedBytes = md5.ComputeHash(originalBytes);
+
+    if (removeDashes) { return Convert.ToBase64String(encodedBytes).Replace("-", ""); }
+    else { return Convert.ToBase64String(encodedBytes); }
+}
+ */

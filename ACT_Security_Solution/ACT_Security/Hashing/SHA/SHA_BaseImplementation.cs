@@ -5,12 +5,23 @@ namespace ACT.Core.Security.Hashing
 {
     public static class SHAHashing
     {
+
         /// <summary>
         /// Convert a input string to a byte array and compute the hash.
         /// </summary>
         /// <param name="value">Input string.</param>
         /// <returns>The Hexadecimal string.</returns>
-        public static string ToSHA256Hash(string value, bool removeDashes = true)
+        public static string ToSHA256Hash(this string value, bool removeDashes = true)
+        {
+            return SHAHashing.StringToSHA256Hash(value, removeDashes);
+        }
+
+        /// <summary>
+        /// Convert a input string to a byte array and compute the hash.
+        /// </summary>
+        /// <param name="value">Input string.</param>
+        /// <returns>The Hexadecimal string.</returns>
+        public static string StringToSHA256Hash(string value, bool removeDashes = true)
         {
             if (value == "" || value == null)
             {
@@ -19,7 +30,7 @@ namespace ACT.Core.Security.Hashing
 
             using (var hasher = SHA256.Create())
             {
-                var originalBytes = System.Text.Encoding.Default.GetBytes(value);
+                var originalBytes = System.Text.Encoding.UTF8.GetBytes(value);
                 var encodedBytes = hasher.ComputeHash(originalBytes);
                 string _tmpReturn = "";
                 if (removeDashes) { _tmpReturn = BitConverter.ToString(encodedBytes).Replace("-", string.Empty).ToUpper(); }
@@ -43,7 +54,7 @@ namespace ACT.Core.Security.Hashing
 
             using (var hasher = SHA512.Create())
             {
-                var originalBytes = System.Text.Encoding.Default.GetBytes(value);
+                var originalBytes = System.Text.Encoding.UTF8.GetBytes(value);
                 var encodedBytes = hasher.ComputeHash(originalBytes);
                 string _tmpReturn = "";
                 if (removeDashes) { _tmpReturn = BitConverter.ToString(encodedBytes).Replace("-", string.Empty).ToUpper(); }

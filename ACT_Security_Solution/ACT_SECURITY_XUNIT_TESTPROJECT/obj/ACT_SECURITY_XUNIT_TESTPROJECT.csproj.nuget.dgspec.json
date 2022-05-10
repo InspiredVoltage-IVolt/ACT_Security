@@ -1,0 +1,178 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\IVolt_Development\\ACT_Security\\ACT_Security\\ACT_Security_Solution\\ACT_SECURITY_XUNIT_TESTPROJECT\\ACT_SECURITY_XUNIT_TESTPROJECT.csproj": {}
+  },
+  "projects": {
+    "D:\\IVolt_Development\\ACT_Security\\ACT_Security\\ACT_Security_Solution\\ACT_Security\\ACT_Security.csproj": {
+      "version": "2.1.2",
+      "restore": {
+        "projectUniqueName": "D:\\IVolt_Development\\ACT_Security\\ACT_Security\\ACT_Security_Solution\\ACT_Security\\ACT_Security.csproj",
+        "projectName": "ACT_Security",
+        "projectPath": "D:\\IVolt_Development\\ACT_Security\\ACT_Security\\ACT_Security_Solution\\ACT_Security\\ACT_Security.csproj",
+        "packagesPath": "C:\\Users\\MarkAlicz\\.nuget\\packages\\",
+        "outputPath": "D:\\IVolt_Development\\ACT_Security\\ACT_Security\\ACT_Security_Solution\\ACT_Security\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MarkAlicz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress .NET Core Desktop 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "http://actnuget.homeunix.com:5555/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "ACT_Extension_Library": {
+              "target": "Package",
+              "version": "[2.1.3, )"
+            },
+            "ACT_Interfaces": {
+              "target": "Package",
+              "version": "[2.1.7, )"
+            },
+            "BouncyCastle.NetCore": {
+              "target": "Package",
+              "version": "[1.8.10, )"
+            },
+            "System.Management": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.Security.Cryptography.Primitives": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Security.Cryptography.ProtectedData": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\IVolt_Development\\ACT_Security\\ACT_Security\\ACT_Security_Solution\\ACT_SECURITY_XUNIT_TESTPROJECT\\ACT_SECURITY_XUNIT_TESTPROJECT.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\IVolt_Development\\ACT_Security\\ACT_Security\\ACT_Security_Solution\\ACT_SECURITY_XUNIT_TESTPROJECT\\ACT_SECURITY_XUNIT_TESTPROJECT.csproj",
+        "projectName": "ACT_SECURITY_XUNIT_TESTPROJECT",
+        "projectPath": "D:\\IVolt_Development\\ACT_Security\\ACT_Security\\ACT_Security_Solution\\ACT_SECURITY_XUNIT_TESTPROJECT\\ACT_SECURITY_XUNIT_TESTPROJECT.csproj",
+        "packagesPath": "C:\\Users\\MarkAlicz\\.nuget\\packages\\",
+        "outputPath": "D:\\IVolt_Development\\ACT_Security\\ACT_Security\\ACT_Security_Solution\\ACT_SECURITY_XUNIT_TESTPROJECT\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MarkAlicz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress .NET Core Desktop 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "http://actnuget.homeunix.com:5555/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\IVolt_Development\\ACT_Security\\ACT_Security\\ACT_Security_Solution\\ACT_Security\\ACT_Security.csproj": {
+                "projectPath": "D:\\IVolt_Development\\ACT_Security\\ACT_Security\\ACT_Security_Solution\\ACT_Security\\ACT_Security.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.11.0, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

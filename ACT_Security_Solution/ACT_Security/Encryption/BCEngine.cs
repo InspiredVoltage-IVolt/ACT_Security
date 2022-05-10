@@ -69,8 +69,10 @@ namespace ACT.Core.Security.Encryption
         private PaddedBufferedBlockCipher _cipher;
         private IBlockCipherPadding _padding;
 
-        internal BCEngine(IBlockCipher blockCipher, Encoding encoding)
+        internal BCEngine(IBlockCipher blockCipher, Encoding encoding = null)
         {
+            if (encoding== null) { encoding = Encoding.UTF8; }
+
             _blockCipher = blockCipher;
             _encoding = encoding;
         }

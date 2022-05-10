@@ -6,14 +6,14 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACT.Core.Security.Encryption
+namespace ACT.Core.Security
 {
 
 
     /// <summary>
     /// Default Encryption Plugin - Used in Non Absolut Secure Places
     /// </summary>
-    internal class ACT_Rijndael 
+    internal class ACT_Core_Security
     {
         internal string _EncryptionKey = "DIPIsCool1234som4eTi4m4esYo4uJu4s24tH4a4ve23T4od4oIt2D44I4PCool4Ness";
 
@@ -37,47 +37,21 @@ namespace ACT.Core.Security.Encryption
 
             // Create a MemoryStream that is going to accept the encrypted bytes
 
-            MemoryStream ms = new MemoryStream();
+            using (MemoryStream ms = new MemoryStream())
+            {
+                var alg = Aes.Create();
+                alg.Key = Key;
+                alg.IV = IV;
 
-            // Create a symmetric algorithm.
-            // We are going to use Rijndael because it is strong and available on all platforms.
-            // You can use other algorithms, to do so substitute the next line with something like
-            //                      TripleDES alg = TripleDES.Create();
+                using (CryptoStream cs = new CryptoStream(ms, alg.CreateEncryptor(), CryptoStreamMode.Write))
+                {
+                    cs.Write(clearData, 0, clearData.Length);
+                    cs.Close();
+                    byte[] encryptedData = ms.ToArray();
+                    return encryptedData;
+                }
+            }
 
-            var alg = Aes.Create();
-
-            // Now set the key and the IV.
-            // We need the IV (Initialization Vector) because the algorithm is operating in its default
-            // mode called CBC (Cipher Block Chaining). The IV is XORed with the first block (8 byte)
-            // of the data before it is encrypted, and then each encrypted block is XORed with the
-            // following block of plaintext. This is done to make encryption more secure.
-            // There is also a mode called ECB which does not need an IV, but it is much less secure.
-
-            alg.Key = Key;
-            alg.IV = IV;
-
-            // Create a CryptoStream through which we are going to be pumping our data.
-            // CryptoStreamMode.Write means that we are going to be writing data to the stream
-            // and the output will be written in the MemoryStream we have provided.
-
-            CryptoStream cs = new CryptoStream(ms, alg.CreateEncryptor(), CryptoStreamMode.Write);
-
-            // Write the data and make it do the encryption
-
-            cs.Write(clearData, 0, clearData.Length);
-
-            // Close the crypto stream (or do FlushFinalBlock).
-            // This will tell it that we have done our encryption and there is no more data coming in,
-            // and it is now a good time to apply the padding and finalize the encryption process.
-
-            cs.Close();
-
-            // Now get the encrypted data from the MemoryStream.
-            // Some people make a mistake of using GetBuffer() here, which is not the right way.
-
-            byte[] encryptedData = ms.ToArray();
-
-            return encryptedData;
         }
 
         internal void CheckPasswordLength(string Password)
@@ -102,7 +76,7 @@ namespace ACT.Core.Security.Encryption
 
             // First we need to turn the input string into a byte array.
 
-            byte[] clearBytes = System.Text.Encoding.Unicode.GetBytes(clearText);
+            byte[] clearBytes = System.Text.Encoding.UTF8.GetBytes(clearText);
 
             // Then, we need to turn the password into Key and IV
             // We are using salt to make it harder to guess our key using a dictionary attack -
@@ -167,7 +141,7 @@ namespace ACT.Core.Security.Encryption
             // Then we are going to derive a Key and an IV from the Password and create an algorithm
             PasswordDeriveBytes pdb = new PasswordDeriveBytes(Password, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
 
-            Rijndael alg = Rijndael.Create();
+            Aes alg = Aes.Create();
             alg.Key = pdb.GetBytes(32);
             alg.IV = pdb.GetBytes(16);
 
@@ -218,46 +192,48 @@ namespace ACT.Core.Security.Encryption
         {
 
             // Create a MemoryStream that is going to accept the decrypted bytes
-            MemoryStream ms = new MemoryStream();
+            using (MemoryStream ms = new MemoryStream())
+            {
 
-            // Create a symmetric algorithm.
-            // We are going to use Rijndael because it is strong and available on all platforms.
-            // You can use other algorithms, to do so substitute the next line with something like
-            //                      TripleDES alg = TripleDES.Create();
-            Rijndael alg = Rijndael.Create();
+                // Create a symmetric algorithm.
+                // We are going to use Rijndael because it is strong and available on all platforms.
+                // You can use other algorithms, to do so substitute the next line with something like
+                //                      TripleDES alg = TripleDES.Create();
+                Aes alg = Aes.Create();
 
-            // Now set the key and the IV.
-            // We need the IV (Initialization Vector) because the algorithm is operating in its default
-            // mode called CBC (Cipher Block Chaining). The IV is XORed with the first block (8 byte)
-            // of the data after it is decrypted, and then each decrypted block is XORed with the previous
-            // cipher block. This is done to make encryption more secure.
-            // There is also a mode called ECB which does not need an IV, but it is much less secure.
+                // Now set the key and the IV.
+                // We need the IV (Initialization Vector) because the algorithm is operating in its default
+                // mode called CBC (Cipher Block Chaining). The IV is XORed with the first block (8 byte)
+                // of the data after it is decrypted, and then each decrypted block is XORed with the previous
+                // cipher block. This is done to make encryption more secure.
+                // There is also a mode called ECB which does not need an IV, but it is much less secure.
 
-            alg.Key = Key;
-            alg.IV = IV;
+                alg.Key = Key;
+                alg.IV = IV;
 
-            // Create a CryptoStream through which we are going to be pumping our data.
-            // CryptoStreamMode.Write means that we are going to be writing data to the stream
-            // and the output will be written in the MemoryStream we have provided.
+                // Create a CryptoStream through which we are going to be pumping our data.
+                // CryptoStreamMode.Write means that we are going to be writing data to the stream
+                // and the output will be written in the MemoryStream we have provided.
 
-            CryptoStream cs = new CryptoStream(ms, alg.CreateDecryptor(), CryptoStreamMode.Write);
+                CryptoStream cs = new CryptoStream(ms, alg.CreateDecryptor(), CryptoStreamMode.Write);
 
-            // Write the data and make it do the decryption
+                // Write the data and make it do the decryption
 
-            cs.Write(cipherData, 0, cipherData.Length);
+                cs.Write(cipherData, 0, cipherData.Length);
 
-            // Close the crypto stream (or do FlushFinalBlock).
-            // This will tell it that we have done our decryption and there is no more data coming in,
-            // and it is now a good time to remove the padding and finalize the decryption process.
+                // Close the crypto stream (or do FlushFinalBlock).
+                // This will tell it that we have done our decryption and there is no more data coming in,
+                // and it is now a good time to remove the padding and finalize the decryption process.
 
-            cs.Close();
+                cs.Close();
 
-            // Now get the decrypted data from the MemoryStream.
-            // Some people make a mistake of using GetBuffer() here, which is not the right way.
+                // Now get the decrypted data from the MemoryStream.
+                // Some people make a mistake of using GetBuffer() here, which is not the right way.
 
-            byte[] decryptedData = ms.ToArray();
+                byte[] decryptedData = ms.ToArray();
 
-            return decryptedData;
+                return decryptedData;
+            }
         }
 
 
@@ -339,7 +315,7 @@ namespace ACT.Core.Security.Encryption
 
             PasswordDeriveBytes pdb = new PasswordDeriveBytes(Password, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
 
-            Rijndael alg = Rijndael.Create();
+            Aes alg = Aes.Create();
 
             alg.Key = pdb.GetBytes(32);
             alg.IV = pdb.GetBytes(16);
@@ -377,94 +353,66 @@ namespace ACT.Core.Security.Encryption
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        internal string MD5(string value)
+        [Obsolete("Not Secure Use SHA")]
+        internal string StringToMD5(string value)
         {
-            System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
-            byte[] bs = System.Text.Encoding.UTF8.GetBytes(value);
-            bs = x.ComputeHash(bs);
-            System.Text.StringBuilder s = new System.Text.StringBuilder();
-            foreach (byte b in bs)
+            using (var _MD5 = MD5.Create())
             {
-                s.Append(b.ToString("x2").ToLower());
+                byte[] bs = Encoding.UTF8.GetBytes(value);
+                bs = _MD5.ComputeHash(bs);
+                return Convert.ToBase64String(bs);
             }
-            return s.ToString();
         }
+
         /// <summary>
         /// Creates A MD5 Hash from a String
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        internal string MD5ALT(string value)
+        [Obsolete("Not Secure Use MD5")]
+        internal string StringToMD5_ACT(string value, bool removeDash = true)
         {
-            System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
-            byte[] bs = System.Text.Encoding.Unicode.GetBytes(value);
-            bs = x.ComputeHash(bs);
-            System.Text.StringBuilder s = new System.Text.StringBuilder();
-            foreach (byte b in bs)
+            using (var _MD5 = MD5.Create())
             {
-                s.Append(b.ToString("x2").ToLower());
+                byte[] bs = Encoding.UTF8.GetBytes(value.Reverse().ToString());
+                bs = _MD5.ComputeHash(bs);
+                return GetBase64StringFromByteArray(bs, removeDash);
             }
-            return s.ToString();
         }
 
-        /// <summary>
-        /// GET STRING FROM HASH
-        /// </summary>
-        /// <param name="hash"></param>
-        /// <returns></returns>
-        private static string GetStringFromHash(byte[] hash)
+        /// <summary>byte[] to String</summary>
+        /// <param name="hash">byte array to</param>
+        /// <returns>Base64 String</returns>
+        internal static string GetBase64StringFromByteArray(byte[] hash, bool removeDash = true)
         {
-            StringBuilder result = new StringBuilder();
-            for (int i = 0; i < hash.Length; i++)
+            if (removeDash) { return Convert.ToBase64String(hash).Replace("-", ""); }
+            else { return Convert.ToBase64String(hash); }
+        }
+
+        /// <summary>SHA 256</summary>
+        /// <param name="value"></param>
+        /// <returns>Base64 String</returns>
+        internal string StringToSHA256Hash(string value, bool removeDash = true)
+        {
+            using (var sha256 = SHA256.Create())
             {
-                result.Append(hash[i].ToString("X2"));
+                byte[] bytes = Encoding.UTF8.GetBytes(value);
+                byte[] hash = sha256.ComputeHash(bytes);
+                return GetBase64StringFromByteArray(hash);
             }
-            return result.ToString();
         }
 
-        /// <summary>
-        /// SHA 256
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        internal string SHA256(string value)
+        /// <summary>SHA 512</summary>
+        /// <param name="value">String To ComputeHash</param>
+        /// <returns>Base64 String</returns>
+        internal string StringToSHA512Hash(string value, bool removeDash = true)
         {
-            var sha256 = SHA256Managed.Create();
-            byte[] bytes = Encoding.UTF8.GetBytes(value);
-            byte[] hash = sha256.ComputeHash(bytes);
-            return GetStringFromHash(hash);
-
-            //System.Security.Cryptography.SHA256CryptoServiceProvider x = new System.Security.Cryptography.SHA256CryptoServiceProvider();
-            //byte[] bs = System.Text.Encoding.Unicode.GetBytes(value);
-            //bs = x.ComputeHash(bs);
-            //System.Text.StringBuilder s = new System.Text.StringBuilder();
-            //foreach (byte b in bs)
-            //{
-            //    s.Append(b.ToString("x2").ToLower());
-            //}
-            //return s.ToString();
-        }
-
-        /// <summary>
-        /// SHA 523
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        internal string SHA512(string value)
-        {
-            //System.Security.Cryptography.SHA512CryptoServiceProvider x = new System.Security.Cryptography.SHA512CryptoServiceProvider();
-            //byte[] bs = System.Text.Encoding.Unicode.GetBytes(value);
-            //bs = x.ComputeHash(bs);
-            //System.Text.StringBuilder s = new System.Text.StringBuilder();
-            //foreach (byte b in bs)
-            //{
-            //    s.Append(b.ToString("x2").ToLower());
-            //}
-            //return s.ToString();
-            SHA512 sha512 = SHA512Managed.Create();
-            byte[] bytes = Encoding.UTF8.GetBytes(value);
-            byte[] hash = sha512.ComputeHash(bytes);
-            return GetStringFromHash(hash);
+            using (var sha512 = SHA512.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(value);
+                byte[] hash = sha512.ComputeHash(bytes);
+                return GetBase64StringFromByteArray(hash);
+            }
         }
 
 

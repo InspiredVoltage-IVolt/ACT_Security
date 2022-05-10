@@ -9,7 +9,7 @@ namespace ACT.Core.Security
 {
     public static class ACT_Security_Core
     {
-        private static Encryption.ACTEncryption _EncryptionEngine = null;
+        
         private static string _MachineKey = "aab6a66eb993431da054cdecd48c781c5f5afcdf6e3e4ef18d9c9016da5dc555c17e877b9a254a3f81914e2f330596fb234d7ea934214a75834a0dccb9b12fb7";
         private static Interfaces.Security.I_Encryption LoadedEncryptionClass = null;
         private static List<string> _ImplementationsAvailable = new List<string>() { "ACT.Core.Security.Encryption.ACTEncryption" };

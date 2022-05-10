@@ -4,21 +4,21 @@ using System.Text;
 
 namespace ACT.Core.Security.Encryption
 {
-    public class ACTEncryption : ACT.Core.Interfaces.Security.I_Encryption, System.IDisposable
+    public class ACTEncryption : Interfaces.Security.I_Encryption, IDisposable
     {
         private string _EncryptionKey = "DIPIsCool1234som4eTi4m4esYo4uJu4s24tH4a4ve23T4od4oIt2D44I4PCool4Ness";
 
-        private ACT_Rijndael _E = null;
+        private ACT_Core_Security _E = null;
 
         public ACTEncryption() 
         {         
-            _E = new ACT_Rijndael();
+            _E = new ACT_Core_Security();
         }
 
         public ACTEncryption(string SaltnPepper)
         {
             _EncryptionKey = SaltnPepper;       
-            _E = new ACT_Rijndael();
+            _E = new ACT_Core_Security();
         }
 
         public string EncryptString(string key, string plainText)
@@ -106,13 +106,15 @@ namespace ACT.Core.Security.Encryption
 
         public void Decrypt(string fileIn, string fileOut, string Password) { File.WriteAllBytes(fileOut, Decrypt(System.IO.File.ReadAllBytes(fileIn), Password)); }
 
-        public string MD5(string value) { return _E.MD5(value); }
+        [Obsolete]
+        public string MD5(string value) { return _E.StringToMD5(value); }
 
-        public string MD5ALT(string value) { return _E.MD5ALT(value); }
+        [Obsolete]
+        public string MD5ALT(string value) { return _E.StringToMD5_ACT(value); }
 
-        public string SHA256(string value) { return _E.SHA256(value); }
+        public string SHA256(string value) { return _E.StringToSHA256Hash(value); }
 
-        public string SHA512(string value) { return _E.SHA512(value); }
+        public string SHA512(string value) { return _E.StringToSHA512Hash(value); }
 
         public bool HealthCheck()
         {
