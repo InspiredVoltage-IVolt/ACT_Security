@@ -2,7 +2,7 @@
 {
     public static class About
     {
-        public static new string ToString()
+        public new static string ToString()
         {
             return "ACT Basic Security Methods.  Hashing, and Built In Encryption.  Extension Methods Are Built In";
         }

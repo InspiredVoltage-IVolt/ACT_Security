@@ -12,6 +12,8 @@ namespace ACT.Core.Security.Encryption
         public string Encrypt(string value, string KeyValue = null)
         {
             if (string.IsNullOrEmpty(value)) return value;
+
+
             try
             {
                 var key = Encoding.UTF8.GetBytes(KeyValue);

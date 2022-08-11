@@ -1,6 +1,7 @@
 ﻿using ACT.Core.Extensions;
 using System.Security.Cryptography;
 using System.Text;
+using ACT.Core.Security.BouncyCastleEncryption;
 
 namespace ACT.Core.Security.Encryption
 {
@@ -86,9 +87,9 @@ namespace ACT.Core.Security.Encryption
             else { return System.Text.Encoding.Default.GetString(ProtectedData.Unprotect(ClearText.FromBase64String(), _EncryptionKey.ToBytes(), DataProtectionScope.LocalMachine)); }
         }
 
-        public string Encrypt(string ClearText) { return BCEncryption.EncryptString(_EncryptionKey.ToBase64().ToSHA256(), ClearText); }
+        public string Encrypt(string ClearText) { return BouncyCastleEncryption.BCEncryption.EncryptString(_EncryptionKey.ToBase64().ToSHA256(), ClearText); }
 
-        public string Encrypt(string clearText, string Password) { return BCEncryption.EncryptString(Password, clearText); }
+        public string Encrypt(string clearText, string Password) { return BouncyCastleEncryption.BCEncryption.EncryptString(Password, clearText); }
 
         public byte[] Encrypt(byte[] clearData, string Password) { return _E.Encrypt(clearData, Password); }
 

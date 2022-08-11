@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "ACT_SECURITY_XUNIT_TESTPROJECT/1.0.0": {
         "dependencies": {
-          "ACT_Security": "2.1.2",
+          "ACT_Security": "2.2.0",
           "Microsoft.NET.Test.Sdk": "16.11.0",
           "coverlet.collector": "3.1.0",
           "xunit": "2.4.1",
@@ -26,7 +26,7 @@
           }
         }
       },
-      "ACT_Extension_Library/2.1.3": {
+      "ACT_Extension_Library/2.1.8.1": {
         "dependencies": {
           "FastExcel": "3.0.13",
           "Microsoft.CSharp": "4.7.0",
@@ -39,8 +39,8 @@
         },
         "runtime": {
           "lib/net6.0/ACTExtLib.dll": {
-            "assemblyVersion": "2.1.3.0",
-            "fileVersion": "2.1.3.0"
+            "assemblyVersion": "2.1.8.1",
+            "fileVersion": "2.1.8.1"
           }
         }
       },
@@ -59,11 +59,11 @@
           }
         }
       },
-      "BouncyCastle.NetCore/1.8.10": {
+      "BouncyCastle.NetCore/1.9.0": {
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
-            "assemblyVersion": "1.8.8.0",
-            "fileVersion": "1.8.20265.1"
+            "assemblyVersion": "1.9.0.0",
+            "fileVersion": "1.9.21290.1"
           }
         }
       },
@@ -1258,11 +1258,11 @@
         }
       },
       "xunit.runner.visualstudio/2.4.3": {},
-      "ACT_Security/2.1.2": {
+      "ACT_Security/2.2.0": {
         "dependencies": {
-          "ACT_Extension_Library": "2.1.3",
+          "ACT_Extension_Library": "2.1.8.1",
           "ACT_Interfaces": "2.1.7",
-          "BouncyCastle.NetCore": "1.8.10",
+          "BouncyCastle.NetCore": "1.9.0",
           "System.Management": "6.0.0",
           "System.Security.Cryptography.Primitives": "4.3.0",
           "System.Security.Cryptography.ProtectedData": "6.0.0"
@@ -1286,12 +1286,12 @@
       "path": "act_enums/2.1.2",
       "hashPath": "act_enums.2.1.2.nupkg.sha512"
     },
-    "ACT_Extension_Library/2.1.3": {
+    "ACT_Extension_Library/2.1.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ETmtHrYJOUZVbKKThoJbcvRYcDw1GbvS5hIbISQgt6NGfkKDXKpxxqqqkKv/sWWY6b1bqg60WwIImwhNm3uGOw==",
-      "path": "act_extension_library/2.1.3",
-      "hashPath": "act_extension_library.2.1.3.nupkg.sha512"
+      "sha512": "sha512-q3rq124Tk7YwTxl9sMLBcSfzPUlmMMpItPA5onYukWT3QyVPFgPTaUDeHK9rbL+9ZtGeGed4Vt+I4iY5c7WI2w==",
+      "path": "act_extension_library/2.1.8.1",
+      "hashPath": "act_extension_library.2.1.8.1.nupkg.sha512"
     },
     "ACT_Interfaces/2.1.7": {
       "type": "package",
@@ -1300,12 +1300,12 @@
       "path": "act_interfaces/2.1.7",
       "hashPath": "act_interfaces.2.1.7.nupkg.sha512"
     },
-    "BouncyCastle.NetCore/1.8.10": {
+    "BouncyCastle.NetCore/1.9.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Uqd1mSV+ewDNuX4G0lXds4TM2DYyFTnCUZAjZLxmxglKSCbTZe2R+TQV/u369J/bXaNZ6s/1sedCtl/5u+66iQ==",
-      "path": "bouncycastle.netcore/1.8.10",
-      "hashPath": "bouncycastle.netcore.1.8.10.nupkg.sha512"
+      "sha512": "sha512-FpWfsqjMp+RNavLqMlviDPlbdf7q4j/pr9SHfc1LKcZz5PRjciuYo59nFnw+eJi+H8cm0eH5uVZStwAv1LRdCw==",
+      "path": "bouncycastle.netcore/1.9.0",
+      "hashPath": "bouncycastle.netcore.1.9.0.nupkg.sha512"
     },
     "coverlet.collector/3.1.0": {
       "type": "package",
@@ -2049,7 +2049,7 @@
       "path": "xunit.runner.visualstudio/2.4.3",
       "hashPath": "xunit.runner.visualstudio.2.4.3.nupkg.sha512"
     },
-    "ACT_Security/2.1.2": {
+    "ACT_Security/2.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
