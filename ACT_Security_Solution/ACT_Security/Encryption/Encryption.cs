@@ -83,8 +83,23 @@ namespace ACT.Core.Security.Encryption
 
         public string NarrowDecrypt(string ClearText, bool UseUser = true, bool UseMachine = false)
         {
-            if (UseUser) { return System.Text.Encoding.Default.GetString(ProtectedData.Unprotect(ClearText.FromBase64String(), _EncryptionKey.ToBytes(), DataProtectionScope.CurrentUser)); }
-            else { return System.Text.Encoding.Default.GetString(ProtectedData.Unprotect(ClearText.FromBase64String(), _EncryptionKey.ToBytes(), DataProtectionScope.LocalMachine)); }
+	        try
+	        {
+		        if (UseUser)
+		        {
+			        return System.Text.Encoding.Default.GetString (ProtectedData.Unprotect (
+				        ClearText.FromBase64String (), _EncryptionKey.ToBytes (), DataProtectionScope.CurrentUser));
+		        }
+		        else
+		        {
+			        return System.Text.Encoding.Default.GetString (ProtectedData.Unprotect (
+				        ClearText.FromBase64String (), _EncryptionKey.ToBytes (), DataProtectionScope.LocalMachine));
+		        }
+	        }
+	        catch
+	        {
+		        return null;
+	        }
         }
 
         public string Encrypt(string ClearText) { return BouncyCastleEncryption.BCEncryption.EncryptString(_EncryptionKey.ToBase64().ToSHA256(), ClearText); }

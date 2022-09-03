@@ -7,20 +7,22 @@ using ACT_Security_Test_Console;
 /// </summary>
 namespace ACT.SecurityTestConsole // Note: actual namespace depends on the project name.
 {
-    public static class Program    
+    public static class Program
     {
         public static void Main(string[] args)
         {
         startArea:
             Console.WriteLine("       HASHING      ");
-            Console.WriteLine("----------------------------------"); 
+            Console.WriteLine("----------------------------------");
             Console.WriteLine("A - SHA512");
             Console.WriteLine("B - SHA256");
-            Console.WriteLine("----------------------------------"); 
+            Console.WriteLine("----------------------------------");
             Console.WriteLine("       ENCODING     ");
             Console.WriteLine("----------------------------------");
             Console.WriteLine("S - String To Base64 Encoding");
             Console.WriteLine("U - String To URL Encoding");
+            Console.WriteLine("O - Protect File");
+            Console.WriteLine("N - Un-Protect File");
             Console.WriteLine("----------------------------------");
             Console.WriteLine("E - EXIT");
             Console.WriteLine("----------------------------------");
@@ -29,7 +31,7 @@ namespace ACT.SecurityTestConsole // Note: actual namespace depends on the proje
             Console.WriteLine();
             Console.WriteLine();
             var kc = C.KeyChar.ToString().ToLower();
-
+            
             if (kc == "a" || kc == "b" || kc == "e")
             {
                 Console.Write("String To Hash> ");
@@ -53,6 +55,7 @@ namespace ACT.SecurityTestConsole // Note: actual namespace depends on the proje
                 {
                     Console.Write("Press Any Key To Exit: ");
                     Console.ReadKey();
+
                     return;
                 }
 
@@ -68,10 +71,12 @@ namespace ACT.SecurityTestConsole // Note: actual namespace depends on the proje
                     var _ED = Console.ReadKey().ToString();
 
                     // Detect Invalid Menu Selections
-                    if (_ED == null || (!string.Equals(_ED, "e", StringComparison.CurrentCultureIgnoreCase) && !string.Equals(_ED, "d", StringComparison.CurrentCultureIgnoreCase)))
+                    if (_ED == null || (!string.Equals(_ED, "e", StringComparison.CurrentCultureIgnoreCase) &&
+                                        !string.Equals(_ED, "d", StringComparison.CurrentCultureIgnoreCase)))
                     {
                         Console.Write("Invalid Selection. Press Any Key To Continue");
                         Console.ReadKey();
+
                         goto b64label;
                     }
 
@@ -82,6 +87,7 @@ namespace ACT.SecurityTestConsole // Note: actual namespace depends on the proje
                     {
                         Console.Write("String Cannot be null");
                         Console.ReadKey();
+
                         goto b64label;
                     }
 
@@ -110,49 +116,81 @@ namespace ACT.SecurityTestConsole // Note: actual namespace depends on the proje
                 {
 
                 urllabel:
-	                Console.Write("Press E to Encode and D to Decode> ");
-	                var _ED = Console.ReadLine();
+                    Console.Write("Press E to Encode and D to Decode> ");
+                    var _ED = Console.ReadLine();
 
-	                // Detect Invalid Menu Selections
-	                if (_ED == null || (!string.Equals(_ED, "e", StringComparison.CurrentCultureIgnoreCase) && !string.Equals(_ED, "d", StringComparison.CurrentCultureIgnoreCase)))
-	                {
-		                Console.Write("Invalid Selection. Press Any Key To Continue");
-		                Console.ReadKey();
-		                goto urllabel;
-	                }
+                    // Detect Invalid Menu Selections
+                    if (_ED == null || (!string.Equals(_ED, "e", StringComparison.CurrentCultureIgnoreCase) &&
+                                        !string.Equals(_ED, "d", StringComparison.CurrentCultureIgnoreCase)))
+                    {
+                        Console.Write("Invalid Selection. Press Any Key To Continue");
+                        Console.ReadKey();
 
-	                Console.Write("String To Encode/Decode> ");
-	                var StringToEncodeDecode = Console.ReadLine();
+                        goto urllabel;
+                    }
 
-	                if (StringToEncodeDecode == null)
-	                {
-		                Console.Write("String Cannot be null");
-		                Console.ReadKey();
-		                goto urllabel;
-	                }
+                    Console.Write("String To Encode/Decode> ");
+                    var StringToEncodeDecode = Console.ReadLine();
 
-	                Console.WriteLine("--------------------");
-	                Console.WriteLine();
-	                if (string.Equals(_ED, "e", StringComparison.CurrentCultureIgnoreCase))
-	                {
-		                Console.WriteLine("<ENCODED-START>");
-		                var ddd = StringToEncodeDecode.URLEncode(true);
-		                Console.WriteLine(ddd);
-		                Console.WriteLine("<END>");
-	                }
-	                else
-	                {
-		                Console.WriteLine("<DECODED-START>");
-		                var ddd = StringToEncodeDecode.URLDecode();
-		                Console.WriteLine(ddd);
-		                Console.WriteLine("<END>");
-	                }
+                    if (StringToEncodeDecode == null)
+                    {
+                        Console.Write("String Cannot be null");
+                        Console.ReadKey();
 
-	                Console.Write("Press Any Key To Exit: ");
-	                Console.ReadKey();
+                        goto urllabel;
+                    }
+
+                    Console.WriteLine("--------------------");
+                    Console.WriteLine();
+                    if (string.Equals(_ED, "e", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        Console.WriteLine("<ENCODED-START>");
+                        var ddd = StringToEncodeDecode.URLEncode(true);
+                        Console.WriteLine(ddd);
+                        Console.WriteLine("<END>");
+                    }
+                    else
+                    {
+                        Console.WriteLine("<DECODED-START>");
+                        var ddd = StringToEncodeDecode.URLDecode();
+                        Console.WriteLine(ddd);
+                        Console.WriteLine("<END>");
+                    }
+
+                    Console.Write("Press Any Key To Exit: ");
+                    Console.ReadKey();
                 }
             }
-
+            if (kc == "o" || kc == "m")
+            {
+            startprotect:
+	            if (kc == "n")
+	            {
+		            Console.Write("File To Protect: ");
+		            var FileToProtect = Console.ReadLine();
+		            if (FileToProtect.FileExists())
+		            {
+			            string _Data = FileToProtect.ReadAllText().ProtectData(true);
+			            _Data.SaveToFile(FileToProtect);
+			            return;
+		            }
+	            }
+	            else if (kc == "o")
+	            {
+		            Console.Write("File To UnProtect: ");
+		            var FileToProtect = Console.ReadLine();
+		            if (FileToProtect.FileExists())
+		            {
+			            string _Data = FileToProtect.ReadAllText().UnProtectData(true);
+			            _Data.SaveToFile(FileToProtect);
+			            return;
+		            }
+		            else
+		            {
+			            goto startprotect;
+		            }
+	            }
+            }
             goto startArea;
 
             /*

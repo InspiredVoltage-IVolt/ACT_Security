@@ -63,12 +63,24 @@ namespace ACT.Core.Extensions
             return _EncryptionClass.Decrypt(DataToDecrypt, Password);
         }
 
+        /// <summary>
+        /// Protect Data using Microsofts Protect Data Class.
+        /// </summary>
+        /// <param name="DataToProtect">string Of Data To Protect</param>
+        /// <param name="MachineLevel">True / False</param>
+        /// <returns></returns>
         public static string ProtectData(this string DataToProtect, bool MachineLevel = true)
         {
             if (_EncryptionClass == null) { _EncryptionClass = ACT_Security_Core.GetEncryptionClass("ACT", ""); }
             return _EncryptionClass.NarrowEncrypt(DataToProtect,!MachineLevel,MachineLevel);
         }
 
+        /// <summary>
+        /// Un Protect Data Using The Microsoft Protect Data Class
+        /// </summary>
+        /// <param name="DataToUnProtect">String Of Data To UnProtect</param>
+        /// <param name="MachineLevel">True / False</param>
+        /// <returns></returns>
         public static string UnProtectData(this string DataToUnProtect, bool MachineLevel = true)
         {
             if (_EncryptionClass == null) { _EncryptionClass = ACT_Security_Core.GetEncryptionClass("ACT", ""); }
