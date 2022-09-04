@@ -87,12 +87,12 @@ namespace ACT.Core.Security.Encryption
 	        {
 		        if (UseUser)
 		        {
-			        return System.Text.Encoding.Default.GetString (ProtectedData.Unprotect (
+			        return System.Text.Encoding.UTF8.GetString (ProtectedData.Unprotect (
 				        ClearText.FromBase64String (), _EncryptionKey.ToBytes (), DataProtectionScope.CurrentUser));
 		        }
 		        else
 		        {
-			        return System.Text.Encoding.Default.GetString (ProtectedData.Unprotect (
+			        return System.Text.Encoding.UTF8.GetString (ProtectedData.Unprotect (
 				        ClearText.FromBase64String (), _EncryptionKey.ToBytes (), DataProtectionScope.LocalMachine));
 		        }
 	        }

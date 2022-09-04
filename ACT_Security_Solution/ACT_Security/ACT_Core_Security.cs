@@ -434,8 +434,8 @@ namespace ACT.Core.Security
 
         internal string NarrowDecrypt(string ClearText, bool UseUser = true, bool UseMachine = false)
         {
-            if (UseUser) { return System.Text.Encoding.Default.GetString(ProtectedData.Unprotect(ClearText.FromBase64String(), _EncryptionKey.ToBytes(), DataProtectionScope.CurrentUser)); }
-            else { return System.Text.Encoding.Default.GetString(ProtectedData.Unprotect(ClearText.FromBase64String(), _EncryptionKey.ToBytes(), DataProtectionScope.LocalMachine)); }
+            if (UseUser) { return System.Text.Encoding.UTF8.GetString(ProtectedData.Unprotect(ClearText.FromBase64String(), _EncryptionKey.ToBytes(), DataProtectionScope.CurrentUser)); }
+            else { return System.Text.Encoding.UTF8.GetString(ProtectedData.Unprotect(ClearText.FromBase64String(), _EncryptionKey.ToBytes(), DataProtectionScope.LocalMachine)); }
         }
     }
 

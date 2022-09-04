@@ -1,7 +1,10 @@
-﻿using ACT.Core.Extensions;
+﻿using System.Text;
+using ACT.Core.Extensions;
 using ACT.Core.Security.BouncyCastleEncryption;
 using ACT.Core.Security.Hashing;
 using ACT_Security_Test_Console;
+using NLog.Targets;
+
 /// <summary>
 /// ACTLicFileEncryp = Encryption Key For Lic File.
 /// </summary>
@@ -31,7 +34,7 @@ namespace ACT.SecurityTestConsole // Note: actual namespace depends on the proje
             Console.WriteLine();
             Console.WriteLine();
             var kc = C.KeyChar.ToString().ToLower();
-            
+
             if (kc == "a" || kc == "b" || kc == "e")
             {
                 Console.Write("String To Hash> ");
@@ -161,60 +164,51 @@ namespace ACT.SecurityTestConsole // Note: actual namespace depends on the proje
                     Console.ReadKey();
                 }
             }
-            if (kc == "o" || kc == "m")
+            if (kc == "o" || kc == "n")
             {
             startprotect:
-	            if (kc == "n")
-	            {
-		            Console.Write("File To Protect: ");
-		            var FileToProtect = Console.ReadLine();
-		            if (FileToProtect.FileExists())
-		            {
-			            string _Data = FileToProtect.ReadAllText().ProtectData(true);
-			            _Data.SaveToFile(FileToProtect);
-			            return;
-		            }
-	            }
-	            else if (kc == "o")
-	            {
-		            Console.Write("File To UnProtect: ");
-		            var FileToProtect = Console.ReadLine();
-		            if (FileToProtect.FileExists())
-		            {
-			            string _Data = FileToProtect.ReadAllText().UnProtectData(true);
-			            _Data.SaveToFile(FileToProtect);
-			            return;
-		            }
-		            else
-		            {
-			            goto startprotect;
-		            }
-	            }
+                if (kc == "o")
+                {
+                    Console.Write("File To Protect: ");
+                    var FileToProtect = Console.ReadLine();
+                    if (FileToProtect == null) { goto startArea; }
+
+                    if (FileToProtect.FileExists())
+                    {
+                        var _Data = System.IO.File.ReadAllBytes(FileToProtect);
+                        if (_Data == null) { throw new Exception("Error Protecting Data  - Data is Blank and Null"); }
+
+                        var _DataBytes = ACT.Core.Security.ProtectData.Protect(_Data, true);
+
+                        string _ProtectedFileName = Path.ChangeExtension(FileToProtect, Path.GetExtension(FileToProtect) + "ACTP");
+
+                        System.IO.File.WriteAllBytes(_ProtectedFileName, _DataBytes);
+
+                        Console.WriteLine("Done Protecting File: " + FileToProtect + ", Press Any Key To Continue.");
+                        Console.ReadKey();
+                        goto startArea;
+                    }
+                }
+                else if (kc == "n")
+                {
+                    Console.Write("File To UnProtect: ");
+                    var FileToUnProtect = Console.ReadLine();
+
+                    if (FileToUnProtect.FileExists())
+                    {
+                        var _Data = System.IO.File.ReadAllBytes(FileToUnProtect);
+                        if (_Data == null) { throw new Exception("Error Protecting Data  - Data is Blank and Null"); }
+
+                        var _DataBytes = ACT.Core.Security.ProtectData.UnProtect(_Data, true);
+                        System.IO.File.WriteAllBytes(FileToUnProtect.Replace("ACTP", ""), _DataBytes);
+
+                        Console.WriteLine("Done UnProtecting File: " + FileToUnProtect.Replace("ACTP", "") + ", Press Any Key To Continue.");
+                        Console.ReadKey();
+                        goto startArea;
+                    }
+                }
             }
             goto startArea;
-
-            /*
-            //ByAmx"nMfBi~k}JR
-
-            var _PPK = RSA_KeyManager.GeneratePublicAndPrivateKeys();
-    Console.WriteLine(_PPK.PubKeyXMLString);
-
-            var _PPK1 = RSA_KeyManager.GeneratePublicAndPrivateKeys();
-    Console.WriteLine(_PPK1.PubKeyXMLString);
-
-            Console.ReadKey();
-            return;
-
-
-            string _Enca = ACT.Core.Security.BouncyCastleEncryption.BCEncryption.EncryptString("MarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasd", "Fuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck youFuck you");
-    Console.WriteLine(_Enca);
-
-            string _Encb = ACT.Core.Security.BouncyCastleEncryption.BCEncryption.DecryptString("MarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasdMarkAliczasasdasdasdasd", _Enca);
-    Console.WriteLine(_Encb);
-
-            Console.ReadKey();
-            */
-
         }
     }
 }

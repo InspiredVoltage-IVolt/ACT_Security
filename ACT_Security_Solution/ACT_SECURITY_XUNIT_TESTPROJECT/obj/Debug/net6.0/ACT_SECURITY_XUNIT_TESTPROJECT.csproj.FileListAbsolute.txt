@@ -123,12 +123,12 @@ D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURIT
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\obj\Debug\net6.0\ACT_SECURITY_XUNIT_TESTPROJECT.genruntimeconfig.cache
 D:\IVolt_Development\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\obj\Debug\net6.0\ref\ACT_SECURITY_XUNIT_TESTPROJECT.dll
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\CoverletSourceRootsMapping
-D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\testhost.exe
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\testhost.dll
+D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\testhost.exe
+D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\xunit.runner.reporters.netcoreapp10.dll
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\xunit.runner.utility.netcoreapp10.dll
-D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\ACT_SECURITY_XUNIT_TESTPROJECT.deps.json
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\ACT_SECURITY_XUNIT_TESTPROJECT.runtimeconfig.json
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\ACT_SECURITY_XUNIT_TESTPROJECT.dll
@@ -137,6 +137,8 @@ D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\AC
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\ACTExtLib.dll
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\ACT_Interfaces.dll
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\DeviceId.dll
+D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\DeviceId.Windows.dll
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\FastExcel.dll
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_SECURITY_XUNIT_TESTPROJECT\bin\Debug\net6.0\Microsoft.TestPlatform.CoreUtilities.dll

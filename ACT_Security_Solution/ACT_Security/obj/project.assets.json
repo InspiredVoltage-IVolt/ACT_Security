@@ -66,6 +66,36 @@
           }
         }
       },
+      "DeviceId/6.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/DeviceId.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/DeviceId.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DeviceId.Windows/6.2.0": {
+        "type": "package",
+        "dependencies": {
+          "DeviceId": "6.2.0",
+          "Microsoft.Win32.Registry": "5.0.0"
+        },
+        "compile": {
+          "lib/net6.0/DeviceId.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/DeviceId.Windows.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FastExcel/3.0.13": {
         "type": "package",
         "compile": {
@@ -88,7 +118,7 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "Microsoft.NETCore.Platforms/3.1.0": {
+      "Microsoft.NETCore.Platforms/5.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -106,14 +136,14 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.Win32.Registry/4.7.0": {
+      "Microsoft.Win32.Registry/5.0.0": {
         "type": "package",
         "dependencies": {
-          "System.Security.AccessControl": "4.7.0",
-          "System.Security.Principal.Windows": "4.7.0"
+          "System.Security.AccessControl": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {
+          "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {
             "related": ".xml"
           }
         },
@@ -123,10 +153,6 @@
           }
         },
         "runtimeTargets": {
-          "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
           "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
             "assetType": "runtime",
             "rid": "win"
@@ -698,14 +724,14 @@
           "lib/netstandard1.3/System.Runtime.Numerics.dll": {}
         }
       },
-      "System.Security.AccessControl/4.7.0": {
+      "System.Security.AccessControl/5.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.0",
-          "System.Security.Principal.Windows": "4.7.0"
+          "Microsoft.NETCore.Platforms": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {
+          "ref/netstandard2.0/System.Security.AccessControl.dll": {
             "related": ".xml"
           }
         },
@@ -829,10 +855,10 @@
           }
         }
       },
-      "System.Security.Principal.Windows/4.7.0": {
+      "System.Security.Principal.Windows/5.0.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {
+          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {
             "related": ".xml"
           }
         },
@@ -1048,6 +1074,48 @@
         "lib/netstandard2.0/BouncyCastle.Crypto.xml"
       ]
     },
+    "DeviceId/6.2.0": {
+      "sha512": "WvYzWimLcckQkaUCcsZtDsMTNcMzRh+tw8rmqO4KdD08b7Hwp3SpWtynoVq9sT+bFvl6ca6SnnqX2DZDra/kTw==",
+      "type": "package",
+      "path": "deviceid/6.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "deviceid.6.2.0.nupkg.sha512",
+        "deviceid.nuspec",
+        "lib/net35/DeviceId.dll",
+        "lib/net35/DeviceId.xml",
+        "lib/net40/DeviceId.dll",
+        "lib/net40/DeviceId.xml",
+        "lib/net5.0/DeviceId.dll",
+        "lib/net5.0/DeviceId.xml",
+        "lib/net6.0/DeviceId.dll",
+        "lib/net6.0/DeviceId.xml",
+        "lib/netstandard2.0/DeviceId.dll",
+        "lib/netstandard2.0/DeviceId.xml"
+      ]
+    },
+    "DeviceId.Windows/6.2.0": {
+      "sha512": "qx5ddGv9GvO+GcdawSxFx8uUJJPcMkgRTtDOlL/D7ipiywUo4FmYqsh/ESqjaxLdlmLQ6JLu9CNbNP6WuDcxFw==",
+      "type": "package",
+      "path": "deviceid.windows/6.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "deviceid.windows.6.2.0.nupkg.sha512",
+        "deviceid.windows.nuspec",
+        "lib/net35/DeviceId.Windows.dll",
+        "lib/net35/DeviceId.Windows.xml",
+        "lib/net40/DeviceId.Windows.dll",
+        "lib/net40/DeviceId.Windows.xml",
+        "lib/net5.0/DeviceId.Windows.dll",
+        "lib/net5.0/DeviceId.Windows.xml",
+        "lib/net6.0/DeviceId.Windows.dll",
+        "lib/net6.0/DeviceId.Windows.xml",
+        "lib/netstandard2.0/DeviceId.Windows.dll",
+        "lib/netstandard2.0/DeviceId.Windows.xml"
+      ]
+    },
     "FastExcel/3.0.13": {
       "sha512": "v0gF9hMHBiAucW4xWXbB/KGQurTTbSCSQY2Y9C9oVNlR+9QCEyWAXhHtG+LhpLZPq+BML8IXYqP0Mkdpzj9TKQ==",
       "type": "package",
@@ -1130,17 +1198,18 @@
         "version.txt"
       ]
     },
-    "Microsoft.NETCore.Platforms/3.1.0": {
-      "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
+    "Microsoft.NETCore.Platforms/5.0.0": {
+      "sha512": "VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/3.1.0",
+      "path": "microsoft.netcore.platforms/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+        "microsoft.netcore.platforms.5.0.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
@@ -1162,13 +1231,14 @@
         "runtime.json"
       ]
     },
-    "Microsoft.Win32.Registry/4.7.0": {
-      "sha512": "KSrRMb5vNi0CWSGG1++id2ZOs/1QhRqROt+qgbEAdQuGjGrFcl4AOl4/exGPUYz2wUnU42nvJqon1T3U0kPXLA==",
+    "Microsoft.Win32.Registry/5.0.0": {
+      "sha512": "dDoKi0PnDz31yAyETfRntsLArTlVAVzUzCIvvEDsDsucrl33Dl8pIJG06ePTJTI3tGpeyHS9Cq7Foc/s4EeKcg==",
       "type": "package",
-      "path": "microsoft.win32.registry/4.7.0",
+      "path": "microsoft.win32.registry/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net46/Microsoft.Win32.Registry.dll",
@@ -1177,13 +1247,11 @@
         "lib/netstandard1.3/Microsoft.Win32.Registry.dll",
         "lib/netstandard2.0/Microsoft.Win32.Registry.dll",
         "lib/netstandard2.0/Microsoft.Win32.Registry.xml",
-        "microsoft.win32.registry.4.7.0.nupkg.sha512",
+        "microsoft.win32.registry.5.0.0.nupkg.sha512",
         "microsoft.win32.registry.nuspec",
         "ref/net46/Microsoft.Win32.Registry.dll",
         "ref/net461/Microsoft.Win32.Registry.dll",
         "ref/net461/Microsoft.Win32.Registry.xml",
-        "ref/net472/Microsoft.Win32.Registry.dll",
-        "ref/net472/Microsoft.Win32.Registry.xml",
         "ref/netstandard1.3/Microsoft.Win32.Registry.dll",
         "ref/netstandard1.3/Microsoft.Win32.Registry.xml",
         "ref/netstandard1.3/de/Microsoft.Win32.Registry.xml",
@@ -1197,8 +1265,6 @@
         "ref/netstandard1.3/zh-hant/Microsoft.Win32.Registry.xml",
         "ref/netstandard2.0/Microsoft.Win32.Registry.dll",
         "ref/netstandard2.0/Microsoft.Win32.Registry.xml",
-        "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll",
-        "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.xml",
         "runtimes/win/lib/net46/Microsoft.Win32.Registry.dll",
         "runtimes/win/lib/net461/Microsoft.Win32.Registry.dll",
         "runtimes/win/lib/net461/Microsoft.Win32.Registry.xml",
@@ -2867,13 +2933,14 @@
         "system.runtime.numerics.nuspec"
       ]
     },
-    "System.Security.AccessControl/4.7.0": {
-      "sha512": "JECvTt5aFF3WT3gHpfofL2MNNP6v84sxtXxpqhLBCcDRzqsPBmHhQ6shv4DwwN2tRlzsUxtb3G9M3763rbXKDg==",
+    "System.Security.AccessControl/5.0.0": {
+      "sha512": "dagJ1mHZO3Ani8GH0PHpPEe/oYO+rVdbQjvjJkBRNQkX4t0r1iaeGn8+/ybkSLEan3/slM0t59SVdHzuHf2jmw==",
       "type": "package",
-      "path": "system.security.accesscontrol/4.7.0",
+      "path": "system.security.accesscontrol/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net46/System.Security.AccessControl.dll",
@@ -2907,7 +2974,7 @@
         "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.xml",
         "runtimes/win/lib/netstandard1.3/System.Security.AccessControl.dll",
         "runtimes/win/lib/uap10.0.16299/_._",
-        "system.security.accesscontrol.4.7.0.nupkg.sha512",
+        "system.security.accesscontrol.5.0.0.nupkg.sha512",
         "system.security.accesscontrol.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -3059,13 +3126,14 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Security.Principal.Windows/4.7.0": {
-      "sha512": "ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
+    "System.Security.Principal.Windows/5.0.0": {
+      "sha512": "t0MGLukB5WAVU9bO3MGzvlGnyJPgUlcwerXn1kzBRjwLKixT96XV0Uza41W49gVd8zEMFu9vQEFlv0IOrytICA==",
       "type": "package",
-      "path": "system.security.principal.windows/4.7.0",
+      "path": "system.security.principal.windows/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net46/System.Security.Principal.Windows.dll",
@@ -3107,7 +3175,7 @@
         "runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.xml",
         "runtimes/win/lib/netstandard1.3/System.Security.Principal.Windows.dll",
         "runtimes/win/lib/uap10.0.16299/_._",
-        "system.security.principal.windows.4.7.0.nupkg.sha512",
+        "system.security.principal.windows.5.0.0.nupkg.sha512",
         "system.security.principal.windows.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -3606,6 +3674,7 @@
       "ACT_Extension_Library >= 2.1.8.1",
       "ACT_Interfaces >= 2.1.7",
       "BouncyCastle.NetCore >= 1.9.0",
+      "DeviceId.Windows >= 6.2.0",
       "System.Management >= 6.0.0",
       "System.Security.Cryptography.Primitives >= 4.3.0",
       "System.Security.Cryptography.ProtectedData >= 6.0.0"
@@ -3669,6 +3738,10 @@
           "BouncyCastle.NetCore": {
             "target": "Package",
             "version": "[1.9.0, )"
+          },
+          "DeviceId.Windows": {
+            "target": "Package",
+            "version": "[6.2.0, )"
           },
           "System.Management": {
             "target": "Package",
