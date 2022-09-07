@@ -193,8 +193,8 @@ namespace ACT.SecurityTestConsole // Note: actual namespace depends on the proje
                 {
                     Console.Write("File To UnProtect: ");
                     var FileToUnProtect = Console.ReadLine();
-
-                    if (FileToUnProtect.FileExists())
+ 
+                   if (FileToUnProtect.FileExists())
                     {
                         var _Data = System.IO.File.ReadAllBytes(FileToUnProtect);
                         if (_Data == null) { throw new Exception("Error Protecting Data  - Data is Blank and Null"); }

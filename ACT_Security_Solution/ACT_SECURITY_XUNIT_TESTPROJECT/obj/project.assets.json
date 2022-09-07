@@ -2104,7 +2104,7 @@
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
       },
-      "ACT_Security/2.2.0": {
+      "ACT_Security/2.2.2.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -6918,7 +6918,7 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "ACT_Security/2.2.0": {
+    "ACT_Security/2.2.2.1": {
       "type": "project",
       "path": "../ACT_Security/ACT_Security.csproj",
       "msbuildProject": "../ACT_Security/ACT_Security.csproj"
@@ -6926,7 +6926,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "ACT_Security >= 2.2.0",
+      "ACT_Security >= 2.2.2.1",
       "Microsoft.NET.Test.Sdk >= 16.11.0",
       "coverlet.collector >= 3.1.0",
       "xunit >= 2.4.1",

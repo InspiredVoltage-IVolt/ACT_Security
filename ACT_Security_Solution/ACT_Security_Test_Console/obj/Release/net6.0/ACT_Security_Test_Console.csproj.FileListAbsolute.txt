@@ -7,6 +7,8 @@ D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\AC
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Release\net6.0\ACTExtLib.dll
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Release\net6.0\ACT_Interfaces.dll
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Release\net6.0\BouncyCastle.Crypto.dll
+D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Release\net6.0\DeviceId.dll
+D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Release\net6.0\DeviceId.Windows.dll
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Release\net6.0\FastExcel.dll
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Release\net6.0\Microsoft.Win32.SystemEvents.dll
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Release\net6.0\Newtonsoft.Json.dll
@@ -39,5 +41,3 @@ D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\AC
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\obj\Release\net6.0\ACT_Security_Test_Console.pdb
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\obj\Release\net6.0\ACT_Security_Test_Console.genruntimeconfig.cache
 D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\obj\Release\net6.0\ref\ACT_Security_Test_Console.dll
-D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Release\net6.0\DeviceId.dll
-D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security_Test_Console\bin\Release\net6.0\DeviceId.Windows.dll
