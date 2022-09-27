@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "ACT_Security_Test_Console/1.0.0": {
         "dependencies": {
-          "ACT_Security": "2.2.2.1"
+          "ACT_Security": "2.2.2.3"
         },
         "runtime": {
           "ACT_Security_Test_Console.dll": {}
@@ -555,7 +555,7 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "ACT_Security/2.2.2.1": {
+      "ACT_Security/2.2.2.3": {
         "dependencies": {
           "ACT_Extension_Library": "2.1.8.1",
           "ACT_Interfaces": "2.1.7",
@@ -1039,7 +1039,7 @@
       "path": "system.xml.xpath/4.3.0",
       "hashPath": "system.xml.xpath.4.3.0.nupkg.sha512"
     },
-    "ACT_Security/2.2.2.1": {
+    "ACT_Security/2.2.2.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

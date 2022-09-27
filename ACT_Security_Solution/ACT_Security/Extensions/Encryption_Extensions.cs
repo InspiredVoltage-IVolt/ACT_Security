@@ -1,5 +1,6 @@
 ﻿using ACT.Core.Security;
 using ACT.Core.Security.Encryption;
+using System.Security.Cryptography;
 using SECInt = ACT.Core.Interfaces.Security;
 
 namespace ACT.Core.Extensions
@@ -87,30 +88,77 @@ namespace ACT.Core.Extensions
             return _EncryptionClass.NarrowDecrypt(DataToUnProtect, !MachineLevel, MachineLevel);
         }
 
-        public static string ToSHA256(this string DataToHash)
+        public static string ToSHA256(this string DataToHash, string ClassName = "ACT")
         {
-            if (_EncryptionClass == null) { _EncryptionClass = ACT_Security_Core.GetEncryptionClass("ACT", ""); }
+            if (_EncryptionClass == null) { _EncryptionClass = ACT_Security_Core.GetEncryptionClass(ClassName, ""); }
             return _EncryptionClass.SHA256(DataToHash);
         }
 
-        public static string ToSHA512(this string DataToHash)
+        public static string ToSHA512(this string DataToHash, string ClassName = "ACT")
         {
-            if (_EncryptionClass == null) { _EncryptionClass = ACT_Security_Core.GetEncryptionClass("ACT", ""); }
+            if (_EncryptionClass == null) { _EncryptionClass = ACT_Security_Core.GetEncryptionClass(ClassName, ""); }
             return _EncryptionClass.SHA512(DataToHash);
         }
 
-        public static string ToMD5(this string DataToHash)
+        public static string ToMD5(this string DataToHash, string ClassName = "ACT")
         {
-            if (_EncryptionClass == null) { _EncryptionClass = ACT_Security_Core.GetEncryptionClass("ACT", ""); }
+            if (_EncryptionClass == null) { _EncryptionClass = ACT_Security_Core.GetEncryptionClass(ClassName, ""); }
             return _EncryptionClass.MD5(DataToHash);
         }
 
-        public static string ToMD5_ALT(this string DataToHash)
+        public static string ToMD5_ALT(this string DataToHash, string ClassName = "ACT")
         {
-            if (_EncryptionClass == null) { _EncryptionClass = ACT_Security_Core.GetEncryptionClass("ACT", ""); }
+            if (_EncryptionClass == null) { _EncryptionClass = ACT_Security_Core.GetEncryptionClass(ClassName, ""); }
             return _EncryptionClass.MD5ALT(DataToHash);
-        }        
-    }
+        }
 
+        /// <summary>
+        /// Convert a input string to a byte array and compute the hash.
+        /// </summary>
+        /// <param name="value">Input string.</param>
+        /// <returns>The Hexadecimal string.</returns>
+        public static string StringToSHA256Hash(this string value, bool removeDashes = true)
+        {
+            if (value.NullOrEmpty())
+            {
+                return value.ToString(true);
+            }
+
+            using (var hasher = SHA256.Create())
+            {
+                var originalBytes = System.Text.Encoding.UTF8.GetBytes(value);
+                var encodedBytes = hasher.ComputeHash(originalBytes);
+                string _tmpReturn = "";
+                if (removeDashes) { _tmpReturn = BitConverter.ToString(encodedBytes).Replace("-", string.Empty).ToUpper(); }
+                else { _tmpReturn = BitConverter.ToString(encodedBytes); }
+
+                return _tmpReturn;
+            }
+        }
+
+        /// <summary>
+        /// Convert a input string to a byte array and compute the hash.
+        /// </summary>
+        /// <param name="value">Input string.</param>
+        /// <returns>The Hexadecimal string.</returns>
+        public static string StringToSHA512Hash(this string value, bool removeDashes = true)
+        {
+            if (value.NullOrEmpty())
+            {
+                return value.ToString(true);
+            }
+
+            using (var hasher = SHA512.Create())
+            {
+                var originalBytes = System.Text.Encoding.UTF8.GetBytes(value);
+                var encodedBytes = hasher.ComputeHash(originalBytes);
+                string _tmpReturn = "";
+                if (removeDashes) { _tmpReturn = BitConverter.ToString(encodedBytes).Replace("-", string.Empty).ToUpper(); }
+                else { _tmpReturn = BitConverter.ToString(encodedBytes); }
+
+                return _tmpReturn;
+            }
+        }
+    }
 }
 
