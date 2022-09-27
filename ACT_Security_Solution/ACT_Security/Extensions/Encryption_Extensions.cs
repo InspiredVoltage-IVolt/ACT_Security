@@ -100,7 +100,7 @@ namespace ACT.Core.Extensions
             return _EncryptionClass.SHA512(DataToHash);
         }
 
-        public static string ToMD5(this string DataToHash, string ClassName = "ACT")
+        public static string ToMD5(this string DataToHash, string ClassName =  "ACT")
         {
             if (_EncryptionClass == null) { _EncryptionClass = ACT_Security_Core.GetEncryptionClass(ClassName, ""); }
             return _EncryptionClass.MD5(DataToHash);
