@@ -121,11 +121,9 @@ namespace ACT.Core.Security.Encryption
         public byte[] Decrypt(byte[] cipherData, string Password) { return _E.Decrypt(cipherData, Password); }
 
         public void Decrypt(string fileIn, string fileOut, string Password) { File.WriteAllBytes(fileOut, Decrypt(System.IO.File.ReadAllBytes(fileIn), Password)); }
-
-        [Obsolete]
+        
         public string MD5(string value) { return _E.StringToMD5(value); }
-
-        [Obsolete]
+        
         public string MD5ALT(string value) { return _E.StringToMD5_ACT(value); }
 
         public string SHA256(string value) { return _E.StringToSHA256Hash(value); }
@@ -145,6 +143,26 @@ namespace ACT.Core.Security.Encryption
         public void Dispose()
         {
             _E = null;
+        }
+
+        public string Md5(string value)
+        {
+	        return MD5 (value);
+        }
+
+        public string Md5Alt(string value)
+        {
+	        return MD5ALT (value);
+        }
+
+        public string Sha256(string value)
+        {
+	        return SHA256 (value);
+        }
+
+        public string Sha512(string value)
+        {
+	        return SHA512(value);
         }
 
         ~ACTEncryption()

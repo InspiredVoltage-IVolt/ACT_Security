@@ -9,7 +9,7 @@
     <BaseOutputPath>D:\IVolt_Releases\ACT-Security\</BaseOutputPath>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>2.2.2.3</Version>
+    <Version>2.2.3.6</Version>
     <Authors>IVOLT, Mark Alicz</Authors>
     <Description>Simple - Quick Encryption - Everyday Use, Home Projects, etc.  </Description>
     <Copyright>2022 IVolt, LLC</Copyright>
@@ -20,8 +20,8 @@
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <AssemblyName>ACT_Security</AssemblyName>
-    <AssemblyVersion>2.2.2.3</AssemblyVersion>
-    <FileVersion>2.2.2.3</FileVersion>
+    <AssemblyVersion>2.2.3.6</AssemblyVersion>
+    <FileVersion>2.2.3.6</FileVersion>
     <Title>ACT Security Methods and Helper Extensions</Title>
   </PropertyGroup>
 
@@ -47,9 +47,9 @@
 
   <ItemGroup>
  
-    <PackageReference Include="ACT_Extension_Library" Version="2.1.8.1" />
+    <PackageReference Include="ACT_Extension_Library" Version="2.1.8.4" />
  
-    <PackageReference Include="ACT_Interfaces" Version="2.1.7" />
+    <PackageReference Include="ACT_Interfaces" Version="2.2.2.3" />
  
     <PackageReference Include="BouncyCastle.NetCore" Version="1.9.0" />
  

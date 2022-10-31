@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>ACT_Security</id>
-    <version>2.2.2.3</version>
+    <version>2.2.3.6</version>
     <title>ACT Security Methods and Helper Extensions</title>
     <authors>IVOLT, Mark Alicz</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
@@ -30,7 +30,7 @@
     </contentFiles>
   </metadata>
   <files>
-    <file src="D:\IVolt_Releases\ACT-Security\Debug\net6.0\ACT_Security.dll" target="lib\net6.0\ACT_Security.dll" />
+    <file src="D:\IVolt_Releases\ACT-Security\Release\net6.0\ACT_Security.dll" target="lib\net6.0\ACT_Security.dll" />
     <file src="D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security\ACT_Security_Icon.ico" target="content\ACT_Security_Icon.ico" />
     <file src="D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security\ACT_Security_Icon.ico" target="contentFiles\any\net6.0\ACT_Security_Icon.ico" />
     <file src="D:\IVolt_Development\__GITHUB\ACT_Security\ACT_Security\ACT_Security_Solution\ACT_Security\ACT_Security_Icon.png" target="\ACT_Security_Icon.png" />

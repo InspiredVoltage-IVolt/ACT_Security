@@ -56,7 +56,7 @@ namespace ACT.Core.Security
 
         internal void CheckPasswordLength(string Password)
         {
-            if (Password == null || Password == "" || Password.Length < 3)
+            if (Password.NullOrEmpty() || Password.Length < 3)
             {
                 throw new System.InvalidOperationException("Password is invalid.  Must be at least 3 characters long");
             }
@@ -353,10 +353,9 @@ namespace ACT.Core.Security
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        [Obsolete("Not Secure Use SHA")]
         internal string StringToMD5(string value)
         {
-            using (var _MD5 = MD5.Create())
+	        using (var _MD5 = MD5.Create())
             {
                 byte[] bs = Encoding.UTF8.GetBytes(value);
                 bs = _MD5.ComputeHash(bs);
@@ -369,7 +368,6 @@ namespace ACT.Core.Security
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        [Obsolete("Not Secure Use MD5")]
         internal string StringToMD5_ACT(string value, bool removeDash = true)
         {
             using (var _MD5 = MD5.Create())

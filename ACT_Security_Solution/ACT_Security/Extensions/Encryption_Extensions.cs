@@ -91,25 +91,25 @@ namespace ACT.Core.Extensions
         public static string ToSHA256(this string DataToHash, string ClassName = "ACT")
         {
             if (_EncryptionClass == null) { _EncryptionClass = ACT_Security_Core.GetEncryptionClass(ClassName, ""); }
-            return _EncryptionClass.SHA256(DataToHash);
+            return _EncryptionClass.Sha256(DataToHash);
         }
 
         public static string ToSHA512(this string DataToHash, string ClassName = "ACT")
         {
             if (_EncryptionClass == null) { _EncryptionClass = ACT_Security_Core.GetEncryptionClass(ClassName, ""); }
-            return _EncryptionClass.SHA512(DataToHash);
+            return _EncryptionClass.Sha512 (DataToHash);
         }
 
         public static string ToMD5(this string DataToHash, string ClassName =  "ACT")
         {
             if (_EncryptionClass == null) { _EncryptionClass = ACT_Security_Core.GetEncryptionClass(ClassName, ""); }
-            return _EncryptionClass.MD5(DataToHash);
+            return _EncryptionClass.Md5(DataToHash);
         }
 
         public static string ToMD5_ALT(this string DataToHash, string ClassName = "ACT")
         {
             if (_EncryptionClass == null) { _EncryptionClass = ACT_Security_Core.GetEncryptionClass(ClassName, ""); }
-            return _EncryptionClass.MD5ALT(DataToHash);
+            return _EncryptionClass.Md5Alt(DataToHash);
         }
 
         /// <summary>

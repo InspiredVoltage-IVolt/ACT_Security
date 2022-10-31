@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "ACT_SECURITY_XUNIT_TESTPROJECT/1.0.0": {
         "dependencies": {
-          "ACT_Security": "2.2.0",
+          "ACT_Security": "2.2.2.3",
           "Microsoft.NET.Test.Sdk": "16.11.0",
           "coverlet.collector": "3.1.0",
           "xunit": "2.4.1",
@@ -1278,7 +1278,7 @@
         }
       },
       "xunit.runner.visualstudio/2.4.3": {},
-      "ACT_Security/2.2.0": {
+      "ACT_Security/2.2.2.3": {
         "dependencies": {
           "ACT_Extension_Library": "2.1.8.1",
           "ACT_Interfaces": "2.1.7",
@@ -2084,7 +2084,7 @@
       "path": "xunit.runner.visualstudio/2.4.3",
       "hashPath": "xunit.runner.visualstudio.2.4.3.nupkg.sha512"
     },
-    "ACT_Security/2.2.0": {
+    "ACT_Security/2.2.2.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
