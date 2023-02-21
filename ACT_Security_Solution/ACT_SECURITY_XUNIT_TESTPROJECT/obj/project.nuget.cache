@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "o6b5f1S3ZzZkKBHJGNLYOx5vBj8aRaPFXdI+tXR9Vhw4jjNkVqsK4ANX8DFpizrqURhiltm6OoHqQ34mBxbMJw==",
+  "dgSpecHash": "UuM6+8kxnsPXCVcIuGyLaEPc4qkF1sfcXndr9XjBKU4SseRblpjJAygoVwnJHJuSHyNAHVQRMy6CfZ4wE//RYQ==",
   "success": true,
   "projectFilePath": "D:\\IVolt_Development\\__GITHUB\\ACT_Security\\ACT_Security\\ACT_Security_Solution\\ACT_SECURITY_XUNIT_TESTPROJECT\\ACT_SECURITY_XUNIT_TESTPROJECT.csproj",
   "expectedPackageFiles": [
@@ -135,7 +135,8 @@
     "C:\\Users\\MarkAlicz\\.nuget\\packages\\xunit.core\\2.4.1\\xunit.core.2.4.1.nupkg.sha512",
     "C:\\Users\\MarkAlicz\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512",
     "C:\\Users\\MarkAlicz\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512",
-    "C:\\Users\\MarkAlicz\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.3\\xunit.runner.visualstudio.2.4.3.nupkg.sha512"
+    "C:\\Users\\MarkAlicz\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.3\\xunit.runner.visualstudio.2.4.3.nupkg.sha512",
+    "C:\\Users\\MarkAlicz\\.nuget\\packages\\act_security\\2.2.3.6\\act_security.2.2.3.6.nupkg.sha512"
   ],
   "logs": []
 }

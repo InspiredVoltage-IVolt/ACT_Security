@@ -1,18 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <RootNamespace>ACT.Core.Security</RootNamespace>
     <ApplicationIcon>ACT_Security_Icon.ico</ApplicationIcon>
-    <BaseOutputPath>D:\IVolt_Releases\ACT-Security\</BaseOutputPath>
+    <BaseOutputPath>D:\IVolt_Releases\ACT_Security\</BaseOutputPath>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>2.2.3.6</Version>
+    <Version>2.3.1.0</Version>
     <Authors>IVOLT, Mark Alicz</Authors>
     <Description>Simple - Quick Encryption - Everyday Use, Home Projects, etc.  </Description>
-    <Copyright>2022 IVolt, LLC</Copyright>
+    <Copyright>2023 IVolt, LLC</Copyright>
     <PackageProjectUrl>http://www.ivolt.io/ACT</PackageProjectUrl>
     <PackageIcon>ACT_Security_Icon.png</PackageIcon>
     <PackageTags>.NET;Encryption;Simple Encryption;Extension Methods;C#</PackageTags>
@@ -20,9 +20,10 @@
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <AssemblyName>ACT_Security</AssemblyName>
-    <AssemblyVersion>2.2.3.6</AssemblyVersion>
-    <FileVersion>2.2.3.6</FileVersion>
+    <AssemblyVersion>2.3.1.0</AssemblyVersion>
+    <FileVersion>2.3.1.0</FileVersion>
     <Title>ACT Security Methods and Helper Extensions</Title>
+    <PackageOutputPath>D:\IVolt_Releases\ACT_Security\Packages\$(Platform)\$(Configuration)</PackageOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -47,16 +48,16 @@
 
   <ItemGroup>
  
-    <PackageReference Include="ACT_Extension_Library" Version="2.1.8.4" />
+    <PackageReference Include="ACT_Extension_Library" Version="2.3.1.1" />
  
-    <PackageReference Include="ACT_Interfaces" Version="2.2.2.3" />
+    <PackageReference Include="ACT_Interfaces" Version="2.3.1" />
  
     <PackageReference Include="BouncyCastle.NetCore" Version="1.9.0" />
  
     <PackageReference Include="DeviceId.Windows" Version="6.2.0" />
-    <PackageReference Include="System.Management" Version="6.0.0" />
+    <PackageReference Include="System.Management" Version="7.0.0" />
     <PackageReference Include="System.Security.Cryptography.Primitives" Version="4.3.0" />
-    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="6.0.0" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="7.0.1" />
   </ItemGroup>
 
   <ItemGroup>
