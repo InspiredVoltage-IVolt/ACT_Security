@@ -9,7 +9,7 @@
     <BaseOutputPath>D:\IVolt_Releases\ACT_Security\</BaseOutputPath>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>2.3.1.0</Version>
+    <Version>2.3.2.0</Version>
     <Authors>IVOLT, Mark Alicz</Authors>
     <Description>Simple - Quick Encryption - Everyday Use, Home Projects, etc.  </Description>
     <Copyright>2023 IVolt, LLC</Copyright>
@@ -20,8 +20,8 @@
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <AssemblyName>ACT_Security</AssemblyName>
-    <AssemblyVersion>2.3.1.0</AssemblyVersion>
-    <FileVersion>2.3.1.0</FileVersion>
+    <AssemblyVersion>2.3.2.0</AssemblyVersion>
+    <FileVersion>2.3.2.0</FileVersion>
     <Title>ACT Security Methods and Helper Extensions</Title>
     <PackageOutputPath>D:\IVolt_Releases\ACT_Security\Packages\$(Platform)\$(Configuration)</PackageOutputPath>
   </PropertyGroup>

@@ -5,7 +5,7 @@
   },
   "projects": {
     "D:\\IVolt_Development\\__GITHUB\\ACT_Security\\ACT_Security\\ACT_Security_Solution\\ACT_Security\\ACT_Security.csproj": {
-      "version": "2.3.1",
+      "version": "2.3.2",
       "restore": {
         "projectUniqueName": "D:\\IVolt_Development\\__GITHUB\\ACT_Security\\ACT_Security\\ACT_Security_Solution\\ACT_Security\\ACT_Security.csproj",
         "projectName": "ACT_Security",
@@ -28,7 +28,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\_AI\\AISkillsForWindows-master\\samples\\SentimentAnalyzerCustomSkill\\build": {},
+          "http://localhost:5000/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

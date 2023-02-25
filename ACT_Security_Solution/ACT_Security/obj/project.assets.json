@@ -4815,7 +4815,7 @@
     "C:\\Users\\MarkAlicz\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {}
   },
   "project": {
-    "version": "2.3.1",
+    "version": "2.3.2",
     "restore": {
       "projectUniqueName": "D:\\IVolt_Development\\__GITHUB\\ACT_Security\\ACT_Security\\ACT_Security_Solution\\ACT_Security\\ACT_Security.csproj",
       "projectName": "ACT_Security",
@@ -4838,7 +4838,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\_AI\\AISkillsForWindows-master\\samples\\SentimentAnalyzerCustomSkill\\build": {},
+        "http://localhost:5000/v3/index.json": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4905,5 +4905,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://localhost:5000/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }
