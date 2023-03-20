@@ -14,9 +14,9 @@
     <SourceRoot Include="C:\Users\MarkAlicz\AppData\Roaming\Godot\mono\GodotNuGetFallbackFolder\" />
   </ItemGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Content Include="$(NuGetPackageRoot)act_interfaces\2.3.1\contentFiles\any\net7.0\ACT_Interfaces.ico" Condition="Exists('$(NuGetPackageRoot)act_interfaces\2.3.1\contentFiles\any\net7.0\ACT_Interfaces.ico')">
+    <Content Include="$(NuGetPackageRoot)act_interfaces\2.3.2.1\contentFiles\any\net7.0\ACT_Interfaces.ico" Condition="Exists('$(NuGetPackageRoot)act_interfaces\2.3.2.1\contentFiles\any\net7.0\ACT_Interfaces.ico')">
       <NuGetPackageId>ACT_Interfaces</NuGetPackageId>
-      <NuGetPackageVersion>2.3.1</NuGetPackageVersion>
+      <NuGetPackageVersion>2.3.2.1</NuGetPackageVersion>
       <NuGetItemType>Content</NuGetItemType>
       <Pack>false</Pack>
       <Private>False</Private>

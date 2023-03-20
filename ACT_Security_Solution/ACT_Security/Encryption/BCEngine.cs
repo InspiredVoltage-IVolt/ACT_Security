@@ -50,7 +50,7 @@ namespace ACT.Core.Security.BouncyCastleEncryption
 
     public static class BCEncryption
     {
-        public static BCEngine _engine = new BCEngine(new AesEngine(), Encoding.ASCII);
+        public static BCEngine _engine = new BCEngine(new AesEngine(), Encoding.UTF8);
         public static Pkcs7Padding _padding = new Pkcs7Padding();
         private static readonly byte[] Salt = new byte[] { 10, 20, 30, 40, 50, 60, 70, 80 };
 
@@ -79,7 +79,7 @@ namespace ACT.Core.Security.BouncyCastleEncryption
             byte[] _finalKey = Create256BitKey(key);
             _engine.SetPadding(_padding);
 
-            return _engine.Encrypt(plainText, Encoding.ASCII.GetString(_finalKey));
+            return _engine.Encrypt(plainText, Encoding.UTF8.GetString(_finalKey));
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace ACT.Core.Security.BouncyCastleEncryption
         {
             byte[] _finalKey = Create256BitKey(key);
             _engine.SetPadding(_padding);
-            return _engine.Decrypt(plainText, Encoding.ASCII.GetString(_finalKey));
+            return _engine.Decrypt(plainText, Encoding.UTF8.GetString(_finalKey));
         }
 
 
